@@ -13,7 +13,7 @@ defmodule LearningPhoenixDiscuss.Topic do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [])
-    |> validate_required([])
+    |> cast(params, [:title])
+    |> validate_required([:title])
   end
 end
