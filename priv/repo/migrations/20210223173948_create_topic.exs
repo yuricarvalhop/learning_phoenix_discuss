@@ -1,4 +1,4 @@
-defmodule LearningPhoenixDiscuss.Repo.Migrations.AddTopics do
+defmodule LearningPhoenixDiscuss.Repo.Migrations.CreateTopic do
   use Ecto.Migration
 
   def change do
@@ -6,7 +6,8 @@ defmodule LearningPhoenixDiscuss.Repo.Migrations.AddTopics do
       add :title, :string
       add :description, :string
 
-      timestamps
+      timestamps()
     end
+
   end
 end
