@@ -2,7 +2,7 @@ defmodule LearningPhoenixDiscuss.Topic do
   use LearningPhoenixDiscuss.Web, :model
 
   schema "topics" do
-    field :name, :string
+    field :title, :string
     field :description, :string
 
     timestamps()
@@ -13,7 +13,7 @@ defmodule LearningPhoenixDiscuss.Topic do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name])
-    |> validate_required([:name])
+    |> cast(params, [:title])
+    |> validate_required([:title])
   end
 end
