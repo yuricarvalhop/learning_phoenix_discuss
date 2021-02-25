@@ -16,9 +16,10 @@ defmodule LearningPhoenixDiscuss.Router do
   scope "/", LearningPhoenixDiscuss do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", TopicController, :index
     get "/topics/new", TopicController, :new
     post "/topics/", TopicController, :create
+    delete "/topics/:id", TopicController, :destroy
   end
 
   # Other scopes may use custom stacks.

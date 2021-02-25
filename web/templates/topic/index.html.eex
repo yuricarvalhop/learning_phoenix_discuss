@@ -1,0 +1,12 @@
+<ul>
+  <%= for topic <- @topics do %>
+    <li>
+      <a href=<%= topic_path(@conn, :new) %>>
+        <%= topic.title %>
+      </a>
+      <%= link to: topic_path(@conn, :destroy, topic.id), method: :delete do %>
+        Delete
+      <% end %>
+    </li>
+  <% end %>
+</ul>
