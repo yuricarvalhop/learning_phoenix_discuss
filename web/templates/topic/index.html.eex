@@ -4,6 +4,10 @@
       <a href=<%= topic_path(@conn, :new) %>>
         <%= topic.title %>
       </a>
+      <%= link to: topic_path(@conn, :edit, topic.id) do %>
+        Edit
+      <% end %>
+
       <%= link to: topic_path(@conn, :destroy, topic.id), method: :delete do %>
         Delete
       <% end %>
