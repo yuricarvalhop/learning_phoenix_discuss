@@ -51,7 +51,7 @@ defmodule LearningPhoenixDiscuss.TopicController do
     render conn, "index.html"
   end
 
-  def destroy(conn, %{"id" => id}) do
+  def delete(conn, %{"id" => id}) do
     topic = Repo.get(Topic, id)
     case Repo.delete(topic) do
       { :ok, _message } ->

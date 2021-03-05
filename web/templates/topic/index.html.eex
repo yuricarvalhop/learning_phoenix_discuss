@@ -8,7 +8,7 @@
         Edit
       <% end %>
 
-      <%= link to: topic_path(@conn, :destroy, topic.id), method: :delete do %>
+      <%= link to: topic_path(@conn, :delete, topic.id), method: :delete do %>
         Delete
       <% end %>
     </li>
