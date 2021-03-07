@@ -52,14 +52,10 @@ defmodule LearningPhoenixDiscuss.TopicController do
   end
 
   def delete(conn, %{"id" => id}) do
-    topic = Repo.get(Topic, id)
-    case Repo.delete(topic) do
-      { :ok, _message } ->
-        conn
-        |> put_flash(:info, "Topic Deleted!")
-        |> redirect(to: topic_path(conn, :index))
-      { :error, changeset } ->
-          render conn, "index.html"
-    end
+    Repo.get!(Topic, id) |> Repo.delete!
+
+    conn
+      |> put_flash(:info, "Topic Deleted!")
+      |> redirect(to: topic_path(conn, :index))
   end
 end
